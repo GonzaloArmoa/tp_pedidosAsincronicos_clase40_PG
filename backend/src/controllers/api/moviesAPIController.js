@@ -166,7 +166,8 @@ const moviesAPIController = {
                     meta: {
                         status: 200,
                         total: confirm.length,
-                        url: 'api/movies/delete/:id'
+                        url: 'api/movies/delete/:id',
+                        message : 'Película eliminada con éxito'
                     },
                     data:confirm
                 }
@@ -175,7 +176,8 @@ const moviesAPIController = {
                     meta: {
                         status: 204,
                         total: confirm.length,
-                        url: 'api/movies/destroy/:id'
+                        url: 'api/movies/destroy/:id',
+                        message : 'No se pudo eliminar la Película'
                     },
                     data:confirm
                 }

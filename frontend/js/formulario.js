@@ -90,4 +90,30 @@ try {
         
     })
 
+document.getElementById('btn-delete').addEventListener('click', async () => {
+
+       try {
+
+        const response = await fetch(`http://localhost:3031/api/movies/delete/${id}`, {
+            method : 'DELETE'
+        });
+        const result = await response.json()
+
+        if(result.meta.status === 200){
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: result.meta.message,
+                showConfirmButton: false,
+                timer: 1500
+              });
+        }
+
+        
+    } catch (error) {
+        console.log(error);
+        
+    }
+    })
+
 }
